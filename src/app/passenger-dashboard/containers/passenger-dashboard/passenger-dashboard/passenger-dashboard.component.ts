@@ -6,7 +6,11 @@ import { Passenger } from '../../../model/passenger-interface';
   styleUrls: ['passenger-dashboard.component.scss'],
   template: `
     <div class="app">
-      <passenger-count [items]="passengers"> </passenger-count>
+      <passenger-count [items]="passengers">
+      </passenger-count>
+      <div *ngFor="let passenger of passengers">
+        {{ passenger.fullname }}
+      </div>
       <passenger-detail
         *ngFor="let passenger of passengers"
         [detail]="passenger"
@@ -74,7 +78,6 @@ export class PassengerDashboardComponent implements OnInit {
       }
       return passenger;
     });
-    console.log(this.passengers);
   }
   handleRemove(event) {
     this.passengers = this.passengers.filter((passenger: Passenger) => {
