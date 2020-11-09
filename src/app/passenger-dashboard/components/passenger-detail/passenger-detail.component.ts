@@ -49,7 +49,11 @@ export class PassengerDetailComponent implements OnChanges {
 
   constructor() {}
 
+<<<<<<< HEAD
   OnChanges(changes) {
+=======
+  ngOnChanges(changes) {
+>>>>>>> c77ba91edfc0d11b9eb674002b759cf44bcb75cd
     if(changes.detail){
       this.detail = Object.assign({}, changes.detail.currentValue);
     }
